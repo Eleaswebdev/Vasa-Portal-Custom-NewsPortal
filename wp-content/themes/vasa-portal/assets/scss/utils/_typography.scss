@@ -1,0 +1,103 @@
+// font url
+
+@font-face {
+  font-family: 'SolaimanLipi';
+  src: url('../fonts/SolaimanLipi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// font family
+$font-family: (
+  ff: (body: "'SolaimanLipi', serif",
+    heading: "'SolaimanLipi', serif",
+    p: "'SolaimanLipi', serif",
+    menu: "'SolaimanLipi', serif",
+    button: "'SolaimanLipi', serif",
+  )
+);
+
+
+// font weight
+$font-scale: (
+  fw: (normal: normal,
+    regular: 400,
+    medium: 500,
+    sbold: 400,
+    bold: 400,
+    heading: 400,
+    ebold: 800,
+    black: 900,
+  )
+);
+
+// Font Sizes (px)
+
+$font-size: (
+  fz: (
+    body: 18px,    
+    p: 18px,
+    p2: 17px,
+    h1: 40px,     
+    h2: 36px,     
+    h3: 28px,   
+    h4: 24px,
+    h5: 20px,
+    h6: 18px,
+  )
+);
+
+$font-size-tab: (
+  fz-tab: (
+    body: 17px,
+    h1: 36px,
+    h2: 32px,
+    h3: 24px,
+    h4: 22px,
+    h5: 20px,
+    h6: 18px,
+  )
+);
+
+$font-size-mob: (
+  fz-mob: (
+    body: 16px,
+    h1: 28px,
+    h2: 24px,
+    h3: 20px,
+    h4: 18px,
+    h5: 16px,
+    h6: 15px,
+  )
+);
+
+// Line Heights
+
+$line-height: (
+  lh: (
+    body: 1.7,
+    p: 1.7,
+    p2: 1.6,
+
+    h1: 1.2,
+    h2: 1.22,
+    h3: 1.24,
+    h4: 1.26,
+    h5: 1.28,
+    h6: 1.33,
+
+    h1-tab: 1.2,
+    h2-tab: 1.22,
+    h3-tab: 1.24,
+    h4-tab: 1.26,
+    h5-tab: 1.28,
+    h6-tab: 1.33,
+
+    h1-mob: 1.18,
+    h2-mob: 1.20,
+    h3-mob: 1.22,
+    h4-mob: 1.24,
+    h5-mob: 1.28,
+    h6-mob: 1.33,
+  )
+);

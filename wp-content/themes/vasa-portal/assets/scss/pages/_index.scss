@@ -1,0 +1,846 @@
+/*----------------------------------------*/
+/*  02. HERO SECTION CSS START
+/*----------------------------------------*/
+
+.news-main-content-wrapper {
+    margin-top: 30px;
+
+    .left-news-wrapper {
+        .list-news {
+            display: flex;
+            align-items: start;
+            gap: 16px;
+
+            @media #{$xs, $md} {
+                flex-direction: column;
+            }
+
+            .thumb-img {
+                width: 50%;
+                position: relative;
+                overflow: hidden;
+
+                @media #{$xs, $md} {
+                    width: 100%;
+                }
+
+                a {
+                    display: block;
+                    position: relative;
+                    z-index: 2;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: transform 0.4s ease;
+                        display: block;
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background: rgba(0, 0, 0, 0.1); // transparent initially
+                    transition: background 0.4s ease;
+                    z-index: 1; // 👈 stays below the link
+                }
+
+                &:hover {
+                    a img {
+                        transform: scale(1.05); // smooth zoom
+                    }
+
+                    &::after {
+                        background: rgba(0, 0, 0, 0.2); // dark overlay
+                    }
+                }
+            }
+
+
+            .content-wrapper {
+                width: 100%;
+            }
+        }
+    }
+
+    .right-news-wrapper {
+        .right-card-news {
+            display: flex;
+            gap: 24px;
+
+            @media #{$xss, $md} {
+                flex-direction: column;
+                gap: 0;
+            }
+
+
+        }
+    }
+}
+
+.thumb-img {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        transition: transform 0.4s ease, filter 0.4s ease;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+        transition: background 0.4s ease;
+        pointer-events: none;
+    }
+
+    &:hover img {
+        transform: scale(1.07);
+        filter: brightness(0.8);
+    }
+
+    &:hover::after {
+        background: rgba(0, 0, 0, 0.15);
+    }
+}
+
+
+@media #{$xss, $xs, $md} {
+    .thumb-img {
+        width: 100%;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.card-news {
+    .thumb-img {
+        img {
+            width: 100%;
+        }
+    }
+
+    .news-date {
+        padding-top: 16px;
+        padding-bottom: 4px;
+    }
+}
+
+.big-thumb-news {
+    .thumb-img {
+        overflow: hidden;
+
+        a {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .news-date {
+        padding-top: 16px;
+        padding-bottom: 4px;
+    }
+}
+
+.single-news-wrapper {
+    padding: 16px;
+    border: 1px solid var(--st-border-1);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+/*----------------------------------------*/
+/*  02. HERO SECTION CSS END
+/*----------------------------------------*/
+
+
+/*----------------------------------------*/
+/*  03. NONDON PARK CSS START
+/*----------------------------------------*/
+.nondon-park-wrapper {
+    .nondon-park-left {
+        @media #{$xs} {
+            padding: 0 12px;
+        }
+
+        .small-main-wrap {
+            display: flex;
+            justify-content: end;
+        }
+
+        .learge-wrapper {
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--st-border-1);
+            margin-bottom: 40px;
+
+            @media #{$sm,$xs} {
+                max-width: 100%;
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+
+        .nondon-park-item {
+            padding-right: 40px;
+
+            @media #{$sm,$xs} {
+                padding-right: 0;
+            }
+        }
+    }
+
+    .nondon-park-right {
+        @media #{$xs} {
+            padding: 0 12px;
+        }
+
+        .nondon-park-item {
+            padding-left: 40px;
+
+            @media #{$sm,$xs} {
+                padding-left: 0;
+                margin-top: 40px;
+            }
+        }
+
+        .learge-wrapper {
+            padding-top: 40px;
+            border-top: 1px solid var(--st-border-1);
+
+            @media #{$sm,$xs} {
+                max-width: 100%;
+                border-top: none;
+                padding-top: 0;
+            }
+        }
+
+        border-left: 1px solid var(--st-border-1);
+
+        @media #{$sm,$xs} {
+            border-left: none;
+        }
+    }
+
+    .nondon-park-thumb {
+
+        @media #{$xs, $sm} {
+            padding-bottom: 16px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .nondon-park-content {
+        text-align: center;
+        padding-top: 32px;
+    }
+
+    .nondon-park-right {
+        .small-wrapper {
+            margin-bottom: 40px;
+        }
+    }
+
+    .small-wrapper {
+        max-width: 396px;
+        width: 100%;
+
+        @media #{$sm,$xs} {
+            max-width: 100%;
+        }
+    }
+
+}
+
+.admin-info {
+    font-size: 17px;
+    line-height: 28px;
+    padding-bottom: 10px;
+
+    a {
+        color: var(--st-common-body);
+    }
+}
+
+/*----------------------------------------*/
+/*  03. NONDON PARK CSS END
+/*----------------------------------------*/
+
+
+/*----------------------------------------*/
+/*  04. BANNER CSS START
+/*----------------------------------------*/
+.banner-full-wrapper {
+    .minar-img {
+        background-repeat: no-repeat !important;
+        background-position: left bottom !important;
+        background-size: contain !important;
+        padding: 48px 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            /* Light white overlay */
+            z-index: 1;
+        }
+    }
+
+    background: linear-gradient(90deg, #5C93FB -141.4%, #FFFFFF 120.99%);
+
+    .banner-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        z-index: 99;
+        position: relative;
+
+        .logo {
+            padding-bottom: 18px;
+        }
+
+        .facebook-link {
+            i {
+                border: 1px solid var(--st-common-body);
+                padding: 4px;
+            }
+
+            span {
+                font-size: 24px;
+                line-height: 32px;
+                color: var(--st-heading-primary);
+                padding-left: 4px;
+            }
+        }
+    }
+}
+
+/*----------------------------------------*/
+/*  04. BANNER CSS END
+/*----------------------------------------*/
+
+
+/*----------------------------------------*/
+/*  05. JATIO CSS START
+/*----------------------------------------*/
+.jatio-main-wrapper {
+    .main-title-wrapper {
+        margin-bottom: 40px;
+    }
+
+    .thumb-img {
+        overflow: hidden;
+
+        img {
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .jation-content-wrapper {
+        .first-left-news {
+            height: 100%;
+            padding-bottom: 24px;
+
+            .thumb-img {
+                img {
+
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content-wrapper {
+                padding-top: 24px;
+                padding-bottom: 8px;
+                text-align: center;
+            }
+        }
+
+        .single-news-wrapper {
+            margin-bottom: 0;
+            height: 100%;
+        }
+    }
+}
+
+.first-right-news {
+    text-align: center;
+    padding-bottom: 24px;
+    height: 100%;
+
+    .news-date {
+        padding-top: 10px;
+        padding-bottom: 8px;
+
+        a {
+            font-size: 20px;
+            line-height: 1;
+            color: var(--st-common-body);
+        }
+    }
+
+    .title {
+        margin-bottom: 24px;
+        font-size: 30px;
+    }
+
+    .thumb-img {
+        img {
+            width: 100%;
+        }
+    }
+
+    .admin-info {
+        padding-top: 12px;
+        padding-bottom: 8px;
+    }
+}
+
+.sport-grid-wrapper {
+    .first-right-news {
+        padding-bottom: 0;
+
+        .single-news-wrapper {
+            margin-bottom: 0;
+        }
+    }
+
+    .readmore-btn {
+        padding-top: 40px;
+    }
+}
+
+.sport-grid-single {
+    height: 100%;
+
+    .single-news-wrapper {
+        height: 100%;
+    }
+}
+
+.list-news {
+    gap: 24px;
+
+    @media #{$xs, $sm} {
+        flex-direction: column;
+    }
+
+    .thumb-img {
+        width: 100%;
+    }
+
+    .content-wrapper {
+        width: 100%;
+    }
+
+    .news-date {
+        padding-bottom: 4px;
+
+        a {
+            font-size: 20px;
+            line-height: 1;
+        }
+    }
+
+    .news-title {
+        padding-bottom: 8px;
+    }
+}
+
+/*----------------------------------------*/
+/*  05. JATIO CSS END
+/*----------------------------------------*/
+
+
+/*----------------------------------------*/
+/*  06. Sports CSS START
+/*----------------------------------------*/
+.sports-main-wrapper {
+    .sport-content-wrapper {
+        .left-sport-wrapper {
+            .reversed-section {
+                flex-direction: row-reverse;
+                margin-top: 24px;
+
+                @media #{$xs, $sm} {
+                    flex-direction: unset;
+                }
+            }
+
+            .left-sport {
+                border: 1px solid var(--st-border-1);
+                width: 100%;
+                gap: 24px;
+
+                @media #{$xs, $sm} {
+                    flex-direction: column;
+                    gap: 0;
+                }
+
+                .sport-img {
+                    width: 110%;
+
+                    .thumb-img {
+                        height: 100%;
+                    }
+
+                    @media #{$lg, $md, $sm, $xs} {
+                        width: 100%;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .sport-content {
+                    @media #{$lg, $md, $sm, $xs} {
+                        width: 100%;
+                    }
+
+                    @media #{$xs, $sm} {
+                        padding: 17px 12px 17px 12px;
+                    }
+
+                    width: 90%;
+                    padding: 17px 17px 17px 0;
+
+                    .admin-info {
+                        padding-bottom: 12px;
+                    }
+
+                    .news-title {
+                        padding-bottom: 16px;
+                    }
+                }
+
+                .reversed-content {
+                    padding: 17px 0 17px 24px;
+
+                    @media #{$xs, $sm} {
+                        padding: 17px 12px 17px 12px;
+                    }
+                }
+            }
+        }
+
+        .sport-right-wrapper {
+            text-align: center;
+            height: 100%;
+
+            @media #{$xs, $sm, $md} {
+                margin-top: 24px;
+            }
+
+            .news-date {
+                padding-top: 10px;
+                padding-bottom: 8px;
+
+                a {
+                    font-size: 20px;
+                    line-height: 1;
+                    color: var(--st-common-body);
+                }
+            }
+
+            .title {
+                margin-bottom: 24px;
+            }
+
+            .thumb-img {
+                img {
+                    width: 100%;
+                }
+            }
+
+            .admin-info {
+                padding-top: 12px;
+                padding-bottom: 8px;
+            }
+        }
+    }
+}
+
+/*----------------------------------------*/
+/*  06. Sports CSS END
+/*----------------------------------------*/
+
+/*----------------------------------------*/
+/*  07. PROKASH SUTRO CSS START 
+/*----------------------------------------*/
+.prokash-suttro-wrapper {
+    background: #08090B;
+
+    .section-title {
+        .title {
+            svg {
+                path {
+                    fill: var(--st-common-white);
+                }
+            }
+
+            h2 {
+                color: var(--st-common-white);
+            }
+        }
+
+        .read-btn {
+            color: var(--st-common-white) !important;
+
+            a {
+                i {
+                    color: var(--st-common-white) !important;
+                }
+            }
+        }
+    }
+
+    .news-wrapper {
+        .left-video-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9; // maintain 16:9 ratio
+            overflow: hidden;
+
+            iframe {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .you-tube-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+
+                img {
+                    max-width: 89px;
+                    width: 100%;
+                }
+            }
+        }
+
+        .right-small-news-wrapper {
+            @media #{$xs, $sm, $md} {
+                margin-top: 24px;
+            }
+
+            .single-news {
+                padding-bottom: 24px;
+                border-bottom: 1px solid var(--st-common-white);
+                gap: 24px;
+                padding-top: 24px;
+
+                @media #{$xs} {
+                    flex-direction: column;
+                }
+
+                &:first-child {
+                    padding-top: 0;
+                }
+
+                &:last-child {
+                    border: none;
+                    padding-bottom: 0;
+                }
+
+                .news-img {
+                    max-width: 180px;
+                    width: 100%;
+
+                    @media #{$xs} {
+                        max-width: 100%;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                }
+
+                .news-content {
+                    gap: 24px;
+
+                    .news-date {
+                        padding-bottom: 5px;
+
+                        a {
+
+                            i,
+                            span {
+                                color: var(--st-common-white);
+                            }
+                        }
+                    }
+
+                    h3 {
+                        a {
+                            color: var(--st-common-white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*----------------------------------------*/
+/*  07. PROKASH SUTRO CSS END 
+/*----------------------------------------*/
+
+/*----------------------------------------*/
+/*  08. INTERNATIONAL NEWS CSS STRAT 
+/*----------------------------------------*/
+
+.international-news {
+    .international-sort-news {
+        margin-top: 24px;
+
+        .sort-thumb {
+            img {
+                width: 100%;
+            }
+        }
+
+        .thumb-news {
+            padding: 16px;
+            background: var(--st-common-black);
+
+            h3 {
+                font-size: 22px;
+
+                a {
+                    color: var(--st-common-white);
+                }
+            }
+        }
+    }
+
+}
+
+.big-thumb-wrapper {
+    border: 1px solid var(--st-border-1);
+
+    @media #{$md,$sm, $lg, $xs} {
+        flex-direction: column;
+    }
+
+    .international-big-thumb {
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .big-thumb-news {
+        width: 100%;
+        height: 100%;
+        padding: 36px 32px 32px 24px;
+
+        @media #{$xs} {
+            padding: 24px 12px 24px 12px;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            padding-bottom: 12px;
+
+            @media #{$xs} {
+                flex-direction: column;
+                align-items: start;
+                gap: 4px;
+            }
+
+            .news-date {
+                padding: 0;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 60px;
+                    height: 1px;
+                    background: var(--st-border-1);
+                    left: 110%;
+                    top: 50%;
+                }
+            }
+
+            .admin-info {
+                padding: 0;
+            }
+        }
+
+        .title {
+            margin-bottom: 16px;
+        }
+
+        .text {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.full-news-wrapper {
+    .big-thumb-wrapper {
+        margin-bottom: 40px;
+    }
+}
+
+.full-width-news-wrapper .readmore-btn {
+    padding-top: 0 !important;
+}
+
+/*----------------------------------------*/
+/*  08. INTERNATIONAL NEWS CSS END 
+/*----------------------------------------*/

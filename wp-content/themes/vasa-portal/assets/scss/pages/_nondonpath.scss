@@ -1,0 +1,368 @@
+/*----------------------------------------*/
+/*  09. NONDONPATH PAGE CSS START 
+/*----------------------------------------*/
+.nondonpath-banner {
+    .left-content {
+        border-right: 1px solid var(--st-border-1);
+        height: 100%;
+
+        @media #{$xs,$sm,$md} {
+            border-right: none;
+        }
+
+        .left-single {
+            padding-right: 24px;
+
+            @media #{$xs,$sm,$md} {
+                padding-right: 0;
+            }
+
+            .single-thumb {
+                img {
+                    width: 100%;
+                }
+            }
+
+            .single-news {
+                .subtitle {
+                    padding-top: 16px;
+                }
+            }
+
+            &:first-child {
+                border-bottom: 1px solid var(--st-border-1);
+                padding-bottom: 24px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+
+    .banner-big-thumb-wrapper {
+        @media #{$xs,$sm,$md} {
+            padding-top: 32px;
+        }
+
+        .big-thumb-img {
+            img {
+                width: 100%;
+            }
+        }
+
+        .big-thumb-content {
+            @media #{$xs,$sm,$md} {
+                text-align: left;
+            }
+
+            .info-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+                padding-top: 24px;
+                margin-bottom: 8px;
+
+                @media #{$xs,$sm,$md} {
+                    justify-content: left;
+                    padding-top: 12px;
+                }
+
+                .thumb-info {
+                    a {
+                        color: $body;
+                    }
+                }
+
+                .categoryy {
+                    a {
+                        color: $body;
+                    }
+                }
+
+            }
+
+            .title {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .right-content {
+        border-left: 1px solid var(--st-border-1);
+        height: 100%;
+
+        @media #{$xs,$sm,$md} {
+            border-left: none;
+        }
+
+        .single-list-news {
+            display: flex;
+            padding-left: 24px;
+            gap: 12px;
+            border-bottom: 1px solid var(--st-border-1);
+            padding-bottom: 24px;
+            padding-top: 24px;
+
+            @media #{$lg} {
+                padding-left: 10px;
+            }
+
+            @media #{$xs,$sm,$md} {
+                padding-left: 0;
+            }
+
+            &:first-child {
+                padding-top: 0;
+
+                @media #{$xs,$sm,$md} {
+                    padding-top: 24px;
+                }
+            }
+
+            &:last-child {
+                border: none;
+                padding-bottom: 0;
+            }
+
+            .list-thumb {
+                max-width: 80px;
+                min-height: 80px;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+
+                @media #{$lg, $xs} {
+                    max-width: 60px;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .list-content {}
+        }
+    }
+}
+
+
+/*----------------------------------------*/
+/*  09. NONDONPATH PAGE CSS END 
+/*----------------------------------------*/
+
+/*----------------------------------------*/
+/*  10. UPONNAS CSS START 
+/*----------------------------------------*/
+.uponnas-wrapper {
+    .uponas-content-wrapper {
+        .left-content-wrapper {
+            border-right: 1px solid var(--st-border-1);
+            height: 100%;
+
+            @media #{$xs,$sm,$md} {
+                border: none;
+                height: auto;
+            }
+
+            .first-child {
+                margin-bottom: 24px;
+            }
+
+            .last-child {
+                border-top: 1px solid var(--st-border-1);
+                padding-top: 24px;
+            }
+
+            .left-single-content {
+                padding-right: 24px;
+                position: relative;
+
+                @media #{$xs,$sm,$md} {
+                    padding-right: 0;
+                }
+
+                .overlay-single-content {
+                    padding: 28px;
+                    background: #F5F5F5;
+                    width: 80%;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+
+                    @media #{$xs,$sm,$md,$lg} {
+                        position: unset;
+                        width: 100%;
+                        padding-left: 14px;
+                        padding-right: 5px;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                .category {
+                    padding-bottom: 8px;
+                }
+
+                .title {
+                    padding-bottom: 8px;
+                }
+            }
+        }
+
+        .middle-wrapper {
+            border-right: 1px solid var(--st-border-1);
+            padding-right: 24px;
+            height: 100%;
+
+            @media #{$xs,$sm,$md} {
+                padding-right: 0;
+                border-right: none;
+                margin-top: 24px;
+                padding-top: 24px;
+                border-top: 1px solid var(--st-border-1);
+                height: auto;
+            }
+
+            .single-content {
+                border-bottom: 1px solid var(--st-border-1);
+                margin-bottom: 24px;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                .single-content-wrap {
+                    padding-top: 16px;
+                    padding-bottom: 24px;
+
+                    .category {
+                        padding-bottom: 4px;
+                    }
+
+                    .title {
+                        padding-bottom: 4px;
+                    }
+                }
+            }
+        }
+
+        .right-wrapper {
+            @media #{$xs,$sm,$md} {
+                padding-top: 24px;
+                border-top: 1px solid var(--st-border-1);
+            }
+
+            .single-content {
+                border-bottom: 1px solid var(--st-border-1);
+                margin-bottom: 24px;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                .single-content-wrap {
+                    padding-top: 16px;
+                    padding-bottom: 24px;
+
+                    .category {
+                        padding-bottom: 4px;
+                    }
+
+                    .title {
+                        padding-bottom: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*----------------------------------------*/
+/*  10. UPONNAS CSS END 
+/*----------------------------------------*/
+
+
+/*----------------------------------------*/
+/*  10. SRITY CHARON CSS START 
+/*----------------------------------------*/
+.sritycharon-wrapper {
+    .section-title {
+        .title {
+            svg {
+                path {
+                    fill: var(--st-common-white);
+                }
+            }
+
+            h2 {
+                color: var(--st-common-white);
+            }
+        }
+
+        .read-btn {
+            color: var(--st-common-white) !important;
+
+            a {
+                i {
+                    color: var(--st-common-white) !important;
+                }
+            }
+        }
+    }
+
+    .sritycharon-content {
+        .single-srity {
+            border: 1px solid var(--st-common-white);
+            padding: 28px 0;
+            text-align: center;
+            min-height: 400px;
+            height: 100%;
+
+            p {
+                padding-bottom: 4px;
+
+                a {
+                    color: var(--st-common-white);
+                }
+            }
+
+            h3 {
+                padding: 12px 5px 12px 5px;
+
+                a {
+                    color: var(--st-common-white);
+                }
+            }
+
+            .img-wrapper {
+                margin-bottom: 16px;
+                border-top: 1px solid var(--st-common-white);
+                border-bottom: 1px solid var(--st-common-white);
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .text {
+                color: var(--st-common-white);
+                padding: 0 5px;
+            }
+        }
+    }
+}
+
+
+/*----------------------------------------*/
+/*  10. SRITY CHARON CSS END 
+/*----------------------------------------*/

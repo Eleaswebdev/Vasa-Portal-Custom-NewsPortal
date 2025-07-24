@@ -1,0 +1,58 @@
+.prokash-overlay-news{
+    .overlay-single-news{
+        position: relative;
+        margin-bottom: 40px;
+        .overlay-info{
+            position: absolute;
+            bottom: 24px;
+            left: 16px;
+            right: 16px;
+            text-align: center;
+            a{
+                color: var(--st-common-white);
+            }
+            .title{
+                font-size: 30px;
+            }
+        }
+    }
+    .prokash-list{
+        .single-list{
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+        .listt-thumb{
+            max-width: 88px;
+            height: 88px;
+            border-radius: 100%;
+            @media #{$xs}{
+                max-width: 70px;
+                height: 70px;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.prokash-grid-news{
+    .grid-single{
+        height: 100%;
+        .grid-content{
+            margin-top: 16px;
+            h5{
+                a{
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+    .single-news-wrapper{
+        margin-bottom: 0;
+    }
+    .readmore-btn{
+        padding-top: 40px;
+    }
+}

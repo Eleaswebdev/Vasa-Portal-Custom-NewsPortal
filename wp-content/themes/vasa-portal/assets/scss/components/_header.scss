@@ -1,0 +1,104 @@
+/* ----------------------------
+ Header Css Start Here 
+ -----------------------------*/
+
+.header-main-area {
+    background: var(--st-bg-1);
+
+    .header-top-area {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .news-date {
+            display: flex;
+            align-items: self-start;
+            gap: 8px;
+
+            .calender-icon {
+                i {
+                    width: 24px;
+                    color: var(--st-common-black);
+                }
+            }
+
+            .calender-date {
+                padding-left: 8px;
+                border-left: 1px solid var(--st-border-1);
+
+                span {
+                    display: block;
+                    color: var(--st-common-black);
+                }
+            }
+        }
+
+        .logo-area {
+            max-width: 180px;
+            width: 100%;
+            margin: 0 auto;
+
+            @media #{$md,$sm,$xs} {
+                max-width: 125px;
+                margin: unset;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .header-social-share {
+            justify-self: end;
+
+            p {
+                color: var(--st-common-black);
+                padding-bottom: 4px;
+
+                @media #{$md,$sm,$xs} {
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
+
+
+.social-icon-wrapper {
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        @media #{$md,$sm,$xs} {
+            gap: 8px;
+        }
+
+        li {
+            border: 1px solid var(--st-border-1);
+            background: var(--st-common-white);
+            padding: 0 6px;
+            @include transition(.3s);
+
+            &:hover {
+                background: var(--st-common-black);
+            }
+
+            &:hover i {
+                color: var(--st-common-white);
+            }
+        }
+
+        .active {
+            background: var(--st-common-black);
+
+            i {
+                color: var(--st-common-white);
+            }
+        }
+    }
+}
+
+/* ----------------------------
+ Header Css End Here 
+ -----------------------------*/

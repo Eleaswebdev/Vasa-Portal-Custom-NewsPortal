@@ -1,0 +1,31 @@
+.read-btn {
+    display: inline-block;
+    color: #000;
+    border: none;
+    line-height: 32px;
+    font-size: 20px;
+    font-weight: 400;
+    display: inline-block;
+    cursor: pointer;
+
+    span {
+        border-bottom: 1px solid #222;
+    }
+}
+
+.news-btn {
+    display: inline-block;
+    background-color: green;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.news-btn:hover {
+    background-color: #d92033;
+}
+.readmore-btn{
+    padding-top: 20px;
+}

@@ -1,0 +1,29 @@
+$colors: (
+    common: (
+        white: #ffffff,
+        black: rgba(0, 0, 0, 1),
+        light-white: #eeeeee,
+        body: #6a6a6a,
+    ),
+    heading: (
+        primary: rgba(0, 0, 0, 1),
+    ),
+    grey: (
+        1:#F3FAF5,
+        2:#EEEEEE,
+    ),
+    text: (
+        body: rgba(85, 85, 85, 1),
+    ),
+    theme: (
+        primary: rgba(0, 0, 0, 1), 
+        secondary: #FFFBEE,
+    ),
+    border: (
+        1: #E6E6E6,
+    ),
+    bg: (
+        1: rgba(250, 250, 250, 1),
+        footer-bg: #F5F5F5,
+    )
+);

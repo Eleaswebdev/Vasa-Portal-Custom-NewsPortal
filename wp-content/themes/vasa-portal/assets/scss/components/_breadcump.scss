@@ -1,0 +1,18 @@
+/*----------------------------------------*/
+/* Breadcrumb CSS START
+/*----------------------------------------*/
+
+.breadcrumb{
+    margin: 0;
+}
+
+.breadcrumb-area {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    background: #F5F5F5;
+    margin-bottom: 40px;
+
+    .breadcrumb-item+.breadcrumb-item::before {
+        display: none;
+    }
+}

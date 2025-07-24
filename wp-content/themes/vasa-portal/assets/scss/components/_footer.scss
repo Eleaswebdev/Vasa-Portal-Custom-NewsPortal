@@ -1,0 +1,143 @@
+/* ----------------------------
+ Foooter Css Start Here 
+ -----------------------------*/
+
+footer {
+    .footer-main-wrapper {
+        background: var(--st-bg-footer-bg);
+
+        .footer-logo-wrapper {
+            .footer-logo {
+                max-width: 220px;
+                width: 100%;
+                padding-bottom: 24px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            p {
+                padding-bottom: 24px;
+            }
+
+            .footer-social {
+                .social-icon-wrapper {
+                    ul {
+                        gap: 24px;
+
+                        li {
+                            padding: 2px 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-single {
+            .single-title {
+                padding-bottom: 24px;
+            }
+
+            .single-content {
+                .footer-menu {
+                    li {
+                        list-style-type: disc;
+                        padding-bottom: 4px;
+                        margin-left: 22px;
+
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+
+                        a {
+                            color: $body;
+                            font-weight: 400;
+                            transition: all .4s ease-in;
+                        }
+
+                        &:hover a {
+                            color: var(--st-common-black);
+                        }
+                    }
+                }
+
+                .footer-contact {
+                    ul {
+                        li {
+                            list-style: none;
+                            padding-bottom: 16px;
+
+                            &:last-child {
+                                padding-bottom: 0;
+                            }
+
+                            a {
+                                color: $body;
+                                font-weight: 400;
+                                transition: all .4s ease-in;
+
+                                i {
+                                    margin-right: 4px;
+                                }
+                            }
+
+                            &:hover a {
+                                color: var(--st-common-black);
+                            }
+                        }
+                    }
+                }
+                    input:focus-visible,
+                    textarea:focus-visible,
+                    select:focus-visible {
+                        outline: none;
+                    }
+
+                .subscribe-form {
+                    form {
+
+                        input[type="email"] {
+                            border: 1px solid var(--st-border-1);
+                            padding: 0 12px;
+                        }
+                         input[type="submit"] {
+                             margin-top: 12px;
+                             padding: 0px 15px;
+                         }
+
+                      
+                    }
+                }
+            }
+        }
+
+        .copyright-section {
+            margin-top: 60px;
+            padding: 16px 0;
+            border-top: 1px solid var(--st-border-1);
+
+            @media #{$xs, $sm} {
+                margin-top: 32px;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------
+ Foooter Css End Here 
+ -----------------------------*/

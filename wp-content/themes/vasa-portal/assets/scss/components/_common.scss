@@ -1,0 +1,35 @@
+// Common Class
+.p-relative {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+
+
+.background-position {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+//Section Title CSS Start 
+.main-title-wrapper{
+    margin-bottom: 40px;
+    padding: 12px 0;
+    border-top: 1px solid var(--st-border-1);
+    border-bottom: 1px solid var(--st-border-1);
+    .section-title{
+        .title{
+            gap: 8px;
+        }
+    }
+}
+
+//Section Title CSS End 
+.small-container {
+    max-width: 872px;
+}

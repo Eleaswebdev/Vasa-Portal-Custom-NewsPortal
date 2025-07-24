@@ -1,0 +1,203 @@
+/* ----------------------------
+ Offcanvas Css Start Here 
+ -----------------------------*/
+
+.menu-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    margin: 0 8px;
+}
+
+.menu-hamburger span {
+    display: block;
+    height: 2px;
+    margin: 4px 0;
+    background: var(--st-heading-primary);
+    border-radius: 2px;
+    transition: 0.3s;
+    width: 30px;
+}
+
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.offcanvas-menu.active {
+    pointer-events: auto;
+}
+
+.offcanvas-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 1000;
+}
+
+.offcanvas-menu.active .offcanvas-backdrop {
+    opacity: 1;
+}
+
+.offcanvas-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    max-width: 100vw;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+    transform: translateX(-110%);
+    transition: transform .3s;
+    z-index: 1001;
+    padding: 24px 16px 16px 16px;
+    overflow-y: auto;
+
+    .news-date {
+        gap: 8px;
+        margin-top: 16px;
+    }
+}
+
+.offcanvas-menu.active .offcanvas-panel {
+    transform: translateX(0);
+}
+
+.offcanvas-close {
+    position: absolute;
+    right: 18px;
+    top: 0;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    z-index: 1002;
+    cursor: pointer;
+}
+
+@media (min-width: 991px) {
+    .menu-hamburger {
+        display: none !important;
+    }
+
+    .offcanvas-menu {
+        display: none !important;
+    }
+}
+
+.offcanvas-logo {
+    text-align: center;
+
+    img {
+        width: 100px;
+    }
+}
+
+.offca-menu {
+    margin-top: 40px;
+
+    ul {
+        list-style: none;
+
+        li {
+            position: relative !important;
+
+            &:not(:last-child)>a {
+                border-bottom: 1px solid var(--st-border-1);
+            }
+
+            a {
+                padding: 12px 0;
+                display: block;
+                font-size: var(--st-fz-p);
+                font-family: var(--st-ff-menu);
+
+                @media#{$xs} {
+                    font-size: var(--st-fz-p2);
+                }
+
+                &:hover {
+                    color: var(--st-theme-primary);
+                }
+            }
+
+            &.active {
+                >a {
+                    color: var(--st-theme-primary);
+                }
+
+                >.menu-close {
+                    color: var(--st-common-white);
+                    background: var(--st-theme-primary);
+                    border-color: var(--st-theme-primary);
+
+                    i {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+
+            .submenu {
+                display: none;
+                padding-left: 20px;
+            }
+
+            .sub-submenu {
+                display: none;
+                padding-left: 20px;
+            }
+
+            .mega-menu {
+                display: none;
+                padding-left: 0;
+            }
+
+            .megamenu-list {
+                ul {
+                    li {
+                        a {
+                            border-bottom: 1px solid var(--st-border-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .homemenu-title {
+        margin-bottom: 25px;
+    }
+
+    @media #{$xs,$sm,$md, $lg} {
+        ul {
+            li {
+                a {
+                    i {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ----------------------------
+ Offcanvas Css End Here 
+ -----------------------------*/

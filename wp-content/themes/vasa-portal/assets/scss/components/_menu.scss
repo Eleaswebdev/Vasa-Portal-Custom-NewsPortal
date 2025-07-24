@@ -1,0 +1,84 @@
+/* ----------------------------
+ Menu Css Start Here 
+ -----------------------------*/
+
+.header-menu-area {
+    border-top: 1px solid var(--st-border-1);
+    border-bottom: 1px solid var(--st-border-1);
+
+    @media #{$md,$sm,$xs} {
+        padding: 8px 0;
+    }
+
+    .main-menu {
+        nav {
+            ul {
+                display: flex;
+                flex-wrap: nowrap;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                overflow-y: auto;
+
+                li {
+                    margin: 0;
+                    border-right: 1px solid var(--st-border-1);
+
+                    &:last-child {
+                        border-right: none;
+                    }
+
+                    &:first-child {
+                        margin-left: -32px;
+                    }
+
+                    a {
+                        display: block;
+                        padding: 16px 32px;
+                        color: var(--st-heading-primary);
+                        text-decoration: none;
+                        font-size: 20px;
+                        transition: background 0.3s, color 0.3s;
+
+                    }
+                }
+            }
+        }
+    }
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+        outline: none;
+    }
+
+    .header-search {
+       
+        display: flex;
+        justify-content: end;
+
+        form {
+            display: flex;
+            input[type="search"] {
+                border: 1px solid #E6E6E6 !important;
+                height: 40px;
+                padding: 0 12px;
+                &::placeholder {
+
+                }
+            }
+
+            button {
+                border: 1px solid #E6E6E6;
+                padding: 2px 12px;
+
+                i {
+               
+                }
+            }
+        }
+    }
+}
+
+/* ----------------------------
+ Menu Css End Here 
+ -----------------------------*/
