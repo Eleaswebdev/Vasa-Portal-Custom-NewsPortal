@@ -825,3 +825,119 @@ function load_more_archive_posts_callback() {
     wp_reset_postdata();
     wp_die();
 }
+
+// Login Register
+function add_vasha_author_role() {
+    remove_role('vasha_author'); // Clean existing if exists
+
+    add_role('vasha_author', __('Vasha Author'), [
+        'read'                   => true,
+        'edit_posts'            => true,
+        'edit_published_posts'  => false,
+        'edit_others_posts'     => false,
+        'delete_posts'          => true,
+        'delete_others_posts'   => false,
+        'delete_published_posts'=> false,
+        'publish_posts'         => false,
+        'upload_files'          => false,
+    ]);
+}
+add_action('init', 'add_vasha_author_role');
+
+function restrict_vasha_author_post_types($query) {
+    if (is_admin() && current_user_can('vasha_author') && $query->is_main_query() && $query->get('post_type') === 'page') {
+        $query->set('post_type', ['post', 'nandonpath']);
+    }
+}
+add_action('pre_get_posts', 'restrict_vasha_author_post_types');
+
+// Register Shortcode
+function vasha_register_form_shortcode() {
+    ob_start(); ?>
+
+    <?php if (is_user_logged_in()): ?>
+        <p>আপনি ইতিমধ্যে লগইন করেছেন।</p>
+    <?php else: ?>
+        <form method="post">
+            <p>
+                <label>পূর্ণ নাম</label><br>
+                <input type="text" name="vasha_full_name" required>
+            </p>
+            <p>
+                <label>ইমেইল</label><br>
+                <input type="email" name="vasha_email" required>
+            </p>
+            <p>
+                <label>পাসওয়ার্ড</label><br>
+                <input type="password" name="vasha_password" required>
+            </p>
+            <p>
+                <label>পাসওয়ার্ড নিশ্চিত করুন</label><br>
+                <input type="password" name="vasha_confirm_password" required>
+            </p>
+            <p>
+                <input type="submit" name="vasha_register_submit" value="রেজিস্টার করুন">
+            </p>
+        </form>
+        <p>ইতোমধ্যে রেজিস্টার করেছেন? <a href="/login">লগইন করুন</a></p>
+    <?php endif; ?>
+
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('vasha_register_form', 'vasha_register_form_shortcode');
+
+// Register User Handler
+function handle_vasha_registration() {
+    if (isset($_POST['vasha_register_submit'])) {
+        $full_name = sanitize_text_field($_POST['vasha_full_name']);
+        $email = sanitize_email($_POST['vasha_email']);
+        $password = $_POST['vasha_password'];
+        $confirm  = $_POST['vasha_confirm_password'];
+
+        if ($password !== $confirm) {
+            wp_die('পাসওয়ার্ড মিলছে না!');
+        }
+
+        if (email_exists($email)) {
+            wp_die('এই ইমেইলটি ইতিমধ্যেই নিবন্ধিত হয়েছে।');
+        }
+
+        $username = sanitize_user(str_replace(' ', '_', strtolower($full_name)));
+        $user_id = wp_create_user($username, $password, $email);
+
+        if (!is_wp_error($user_id)) {
+            wp_update_user([
+                'ID' => $user_id,
+                'display_name' => $full_name,
+                'first_name' => $full_name
+            ]);
+            wp_update_user(['ID' => $user_id, 'role' => 'vasha_author']);
+            wp_set_auth_cookie($user_id);
+            wp_redirect(home_url());
+            exit;
+        } else {
+            wp_die('রেজিস্ট্রেশনে ত্রুটি: ' . $user_id->get_error_message());
+        }
+    }
+}
+add_action('init', 'handle_vasha_registration');
+
+function vasha_login_form_shortcode() {
+    if (is_user_logged_in()) {
+        return '<p>আপনি ইতিমধ্যে লগইন করেছেন।</p>';
+    }
+
+    ob_start();
+    wp_login_form([
+        'redirect' => home_url(),
+        'label_username' => 'ইউজারনেম বা ইমেইল',
+        'label_password' => 'পাসওয়ার্ড',
+        'label_log_in'   => 'লগইন করুন',
+        'id_submit'       => 'login-submit',
+    ]);
+    echo '<p class="register-link">নতুন ব্যবহারকারী? <a href="' . esc_url(site_url('/register')) . '">রেজিস্টার করুন</a></p>';
+    return ob_get_clean();
+}
+add_shortcode('vasha_login_form', 'vasha_login_form_shortcode');
+

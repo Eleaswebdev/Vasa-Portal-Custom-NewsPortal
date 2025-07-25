@@ -15,21 +15,31 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main  mb-80 mt-80">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 m-auto">
+					<div class="login-form-wrapper shadow-lg">
+						<div class="login-form-header text-center">
+							<h2><?php the_title(); ?></h2>
+						</div>
+						<?php if (have_posts()) : ?>
+							<?php while (have_posts()) : the_post(); ?>
+								<div class="page-content">
+									<?php the_content(); ?>
+								</div>
+							<?php endwhile; ?>
+						<?php else : ?>
+							<p><?php esc_html_e('Sorry, no content found.', 'vasa-portal'); ?></p>
+						<?php endif; ?>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+					</div>
+				</div>
 
-			get_template_part( 'template-parts/content', 'page' );
+			</div>
+		</div>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
-		endwhile; // End of the loop.
-		?>
 
 	</main><!-- #main -->
 

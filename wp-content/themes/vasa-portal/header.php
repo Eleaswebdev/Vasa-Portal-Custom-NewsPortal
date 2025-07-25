@@ -55,19 +55,30 @@
 
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
-                            <div class="header-social-share">
-                                <p>ফলো করুনঃ</p>
-                                <div class="social-icon-wrapper">
-                                    <ul>
-                                        <li><a target="_blank" href="https://www.facebook.com/VASAMediaOfficial/" aria-label="Facebook Icon"><i class="ri-facebook-fill"></i></a>
-                                        </li>
-                                        <li><a target="_blank" href="https://www.youtube.com/channel/UCCGE1nf9TYytDLAvyMUbT5Q" aria-label="Yotutube Icon"><i class="ri-youtube-line"></i></a>
-                                        </li>
-                                        <li><a href="#" aria-label="Linkdin Icon"><i class="ri-linkedin-fill"></i></a>
-                                        </li>
-                                        <li class="active" aria-label="Twiter Icon"><a target="_blank" href="https://x.com/VASAMedia"><i
-                                                    class="ri-twitter-x-line"></i></a></li>
-                                    </ul>
+                            <div class="header-top-right d-flex justify-content-between">
+                                <div class="header-login-register text-end">
+                                    <?php if (is_user_logged_in()): ?>
+                                        <a href="<?php echo esc_url(wp_logout_url(home_url())); ?>" aria-label="Logout"><i class="ri-logout-box-line"></i> লগআউট</a>
+                                    <?php else: ?>
+                                        <a href="<?php echo esc_url(site_url('/login')); ?>" aria-label="Login"><i class="ri-user-line"></i> লগইন</a> /
+                                        <a href="<?php echo esc_url(site_url('/register')); ?>" aria-label="Register"> রেজিস্টার</a>
+                                    <?php endif; ?>
+                                </div>
+
+                                <div class="header-social-share">
+
+                                    <div class="social-icon-wrapper">
+                                        <ul>
+                                            <li><a target="_blank" href="https://www.facebook.com/VASAMediaOfficial/" aria-label="Facebook Icon"><i class="ri-facebook-fill"></i></a>
+                                            </li>
+                                            <li><a target="_blank" href="https://www.youtube.com/channel/UCCGE1nf9TYytDLAvyMUbT5Q" aria-label="Yotutube Icon"><i class="ri-youtube-line"></i></a>
+                                            </li>
+                                            <li><a href="#" aria-label="Linkdin Icon"><i class="ri-linkedin-fill"></i></a>
+                                            </li>
+                                            <li class="active" aria-label="Twiter Icon"><a target="_blank" href="https://x.com/VASAMedia"><i
+                                                        class="ri-twitter-x-line"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>

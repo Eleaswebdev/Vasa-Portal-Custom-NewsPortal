@@ -2420,6 +2420,52 @@ footer .footer-main-wrapper .copyright-section {
 /*----------------------------------------*/
 /*  08. INTERNATIONAL NEWS CSS END 
 /*----------------------------------------*/
+/* Login page css*/
+/* Login page css */
+.login-form-wrapper {
+  padding: 40px 30px;
+}
+.login-form-wrapper .login-username,
+.login-form-wrapper .login-password {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.login-form-wrapper .login-username input,
+.login-form-wrapper .login-password input {
+  border: 1px solid var(--st-border-1);
+  outline: none;
+  padding: 3px 10px;
+}
+.login-form-wrapper .login-password {
+  margin-top: 24px;
+}
+.login-form-wrapper .login-remember {
+  margin: 10px 0 20px;
+  font-size: 16px;
+}
+.login-form-wrapper .register-link a {
+  text-decoration: underline;
+  color: var(--st-common-body);
+}
+
+#login-submit {
+  display: inline-block;
+  background-color: green;
+  color: #fff;
+  padding: 6px 25px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+#login-submit:hover {
+  background-color: #d92033;
+}
+
 /*----------------------------------------*/
 /*  09. NONDONPATH PAGE CSS START 
 /*----------------------------------------*/
